@@ -2,109 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecb1297c-583c-45b5-bc75-30a350a27d63" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Buka Loca/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Buka Loca/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Buka Loca/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Buka Loca/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Buka Loca/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/CameraController.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/CameraController.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/Idle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/Idle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/UnzoomFromFridge.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/UnzoomFromFridge.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/ZoomToFridge.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/ZoomToFridge.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/ZoomedIdle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/ZoomedIdle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorClose.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorClose.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorIdle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorIdle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorOpen.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorOpen.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorOpenIdle.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorOpenIdle.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/FridgeController.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/FridgeController.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/KarambolaSlice.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/KarambolaSlice.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/LineMaterial.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/LineMaterial.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Table.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Table.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/TableRaycast.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/TableRaycast.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/No Name.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/No Name.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_BaseColor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_BaseColor.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Height.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Height.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Metallic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Metallic.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Roughness.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Roughness.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/goodBread.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/goodBread.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Door material.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Door material.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Fridge material.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Fridge material.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Lighter material.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Lighter material.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes/Door.mesh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes/Door.mesh.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes/Fridge.mesh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes/Fridge.mesh.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes/Lighter.mesh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes/Lighter.mesh.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Shelfs material.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Shelfs material.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Karambola.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Karambola/karamba.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Karambola/karamba.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Karambola/karambola.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Karambola/karambola.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Bread.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Bread.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Fridge.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Fridge.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Karambola.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Karambola.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FridgeOpen.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FridgeOpen.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MathExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MathExtensions.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Menu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Menu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MeshExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MeshExtensions.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MeshMaker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MeshMaker.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SliceWorker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SliceWorker.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Sliceable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Sliceable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Slicer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Slicer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SlicerMetadata.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SlicerMetadata.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Buka Loca/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Buka Loca/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,16 +26,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "rider.run.widget.enabled.cache": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Editor\Unity.exe" />
@@ -180,8 +79,23 @@
       <workItem from="1653566847651" duration="9524000" />
       <workItem from="1653593312373" duration="2773000" />
       <workItem from="1653641176304" duration="2797000" />
-      <workItem from="1653857263796" duration="6737000" />
+      <workItem from="1653857263796" duration="7169000" />
     </task>
+    <task id="LOCAL-00001" summary="first version!">
+      <created>1653864781274</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653864781274</updated>
+    </task>
+    <task id="LOCAL-00002" summary="second..?">
+      <created>1653864822832</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1653864822832</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,8 +114,26 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="first version!" />
+    <MESSAGE value="second..?" />
+    <option name="LAST_COMMIT_MESSAGE" value="second..?" />
   </component>
 </project>
