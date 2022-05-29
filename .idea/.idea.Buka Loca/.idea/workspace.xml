@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ecb1297c-583c-45b5-bc75-30a350a27d63" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Buka Loca/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Buka Loca/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Buka Loca/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Buka Loca/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Buka Loca/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/CameraController.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/CameraController.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/Idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/UnzoomFromFridge.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/UnzoomFromFridge.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/ZoomToFridge.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/ZoomToFridge.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/ZoomedIdle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Camera/ZoomedIdle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorClose.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorClose.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorIdle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorIdle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorOpen.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorOpen.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorOpenIdle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/DoorOpenIdle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/FridgeController.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Fridge/FridgeController.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/KarambolaSlice.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/KarambolaSlice.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/LineMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/LineMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Table.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Table.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/TableRaycast.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/TableRaycast.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/No Name.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/No Name.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_BaseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_BaseColor.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Height.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Height.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Metallic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Metallic.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Normal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Roughness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/breadauto_1001_Roughness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/goodBread.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Bread/goodBread.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Door material.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Door material.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Fridge material.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Fridge material.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Lighter material.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Lighter material.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes/Door.mesh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes/Door.mesh.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes/Fridge.mesh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes/Fridge.mesh.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes/Lighter.mesh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Meshes/Lighter.mesh.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Shelfs material.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Fridge/Shelfs material.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Karambola.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Karambola/karamba.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Karambola/karamba.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Karambola/karambola.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Karambola/karambola.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Bread.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Bread.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Fridge.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Fridge.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Karambola.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Karambola.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FridgeOpen.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FridgeOpen.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MathExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MathExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Menu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Menu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MeshExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MeshExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MeshMaker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MeshMaker.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SliceWorker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SliceWorker.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Sliceable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Sliceable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Slicer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Slicer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SlicerMetadata.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SlicerMetadata.cs.meta" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0847a0faf94444ccbaf1958021b27f54116400/36/e32f119f/Plane.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0847a0faf94444ccbaf1958021b27f54116400/e7/a2e77b19/Renderer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SliceWorker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Sliceable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Slicer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.path@2.1.0/Tests/PlaceholderTests.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="29exeEguT6PvTkY7N14YURjBTpe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;C:\Users\Nikita\RiderProjects\Buka Loca&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Nikita\RiderProjects\Buka Loca" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ecb1297c-583c-45b5-bc75-30a350a27d63" name="Changes" comment="" />
+      <created>1653487445551</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653487445551</updated>
+      <workItem from="1653487449325" duration="4011000" />
+      <workItem from="1653566847651" duration="9524000" />
+      <workItem from="1653593312373" duration="2773000" />
+      <workItem from="1653641176304" duration="2797000" />
+      <workItem from="1653857263796" duration="6737000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
