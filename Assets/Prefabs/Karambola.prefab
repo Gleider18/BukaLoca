@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7108358196462024226}
   m_Layer: 0
   m_Name: Karambola
-  m_TagString: Slicable
+  m_TagString: Sliceable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

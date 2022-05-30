@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Slicable
   - Table
   - Fridge
+  - Sliceable
   layers:
   - Default
   - TransparentFX

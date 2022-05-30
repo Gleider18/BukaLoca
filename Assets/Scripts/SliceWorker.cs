@@ -17,11 +17,7 @@ public class SliceWorker : MonoBehaviour
     [SerializeField] private Color originColor;
     [SerializeField] private Color cuttableColor;
     [SerializeField] private Material lineMaterial;
-    private GameObject _objectToCut;
-
-    private void Start()
-    {
-    }
+    private List<GameObject> _objectsToCut = new List<GameObject>();
 
     private void OnDrawGizmos()
     {
@@ -88,23 +84,23 @@ public class SliceWorker : MonoBehaviour
                 
                 RaycastHit[] hits = Physics.RaycastAll(findBread, Vector3.Distance(position, position1));
 
+                _objectsToCut.Clear();
                 if (hits.Length == 0)
                 {
                     lineMaterial.color = originColor;
-                    _objectToCut = null;
                 }
 
                 foreach (var hitBread in hits)
                 {
-                    if (hitBread.transform.gameObject.CompareTag("Slicable"))
+                    if (hitBread.transform.gameObject.CompareTag("Sliceable"))
                     {
                         lineMaterial.color = cuttableColor;
-                        _objectToCut = hitBread.transform.gameObject;
+                        _objectsToCut.Add(hitBread.transform.gameObject);
                     }
                     else
                     {
                         lineMaterial.color = originColor;
-                        _objectToCut = null;
+                        _objectsToCut.Clear();
                     }
                 }
 
@@ -116,123 +112,129 @@ public class SliceWorker : MonoBehaviour
         {
             _lineRenderer.enabled = false;
             lineMaterial.color = originColor;
-            if (_objectToCut == null)
+            if (_objectsToCut == null)
                 return;
-            Cut(_objectToCut);
-            _objectToCut = null;
+            Cut(_objectsToCut);
+            _objectsToCut.Clear();
         }
     }
 
-    private void Cut(GameObject target)
+    private void Cut(List<GameObject> targets)
     {
-        try
+        foreach (var target in targets)
         {
-            // get the victims mesh
-            _cutParticleSystem.transform.position = target.transform.position;
-            var leftSide = target;
-            var leftMeshFilter = leftSide.GetComponent<MeshFilter>();
-            var leftMeshRenderer = leftSide.GetComponent<MeshRenderer>();
-            Sliceable sliceable = target.GetComponent<Sliceable>();
 
-            var materials = new List<Material>();
-            leftMeshRenderer.GetSharedMaterials(materials);
 
-            // the insides
-            var capSubmeshIndex = 0;
-            Material sliceableIsSolid;
-
-            if (sliceable == null)
-                sliceableIsSolid = leftMeshRenderer.material;
-            else
-                sliceableIsSolid = sliceable.MaterialToSet;
-
-            
-            _cutParticleSystem.GetComponent<ParticleSystemRenderer>().material = sliceableIsSolid;
-            
-            if (materials.Contains(sliceableIsSolid))
-                capSubmeshIndex = materials.IndexOf(sliceableIsSolid);
-            else
+            try
             {
-                capSubmeshIndex = materials.Count;
-                materials.Add(sliceableIsSolid);
+                // get the victims mesh
+                _cutParticleSystem.transform.position = target.transform.position;
+                var leftSide = target;
+                var leftMeshFilter = leftSide.GetComponent<MeshFilter>();
+                var leftMeshRenderer = leftSide.GetComponent<MeshRenderer>();
+                Sliceable sliceable = target.GetComponent<Sliceable>();
+
+                var materials = new List<Material>();
+                leftMeshRenderer.GetSharedMaterials(materials);
+
+                // the insides
+                var capSubmeshIndex = 0;
+                Material sliceableIsSolid;
+
+                if (sliceable == null)
+                    sliceableIsSolid = leftMeshRenderer.material;
+                else
+                    sliceableIsSolid = sliceable.MaterialToSet;
+
+
+                _cutParticleSystem.GetComponent<ParticleSystemRenderer>().material = sliceableIsSolid;
+
+                if (materials.Contains(sliceableIsSolid))
+                    capSubmeshIndex = materials.IndexOf(sliceableIsSolid);
+                else
+                {
+                    capSubmeshIndex = materials.Count;
+                    materials.Add(sliceableIsSolid);
+                }
+
+
+                //Create a triangle between the tip and base so that we can get the normal
+                Vector3 side1 = _topLeft.transform.position - _topRight.transform.position;
+                Vector3 side2 = _topLeft.transform.position - _bottom.transform.position;
+
+                //Get the point perpendicular to the triangle above which is the normal
+                //https://docs.unity3d.com/Manual/ComputingNormalPerpendicularVector.html
+                Vector3 normal = Vector3.Cross(side1, side2).normalized;
+
+                //Transform the normal so that it is aligned with the object we are slicing's transform.
+                Vector3 transformedNormal =
+                    ((Vector3)(target.transform.localToWorldMatrix.transpose * normal)).normalized;
+
+                //Get the enter position relative to the object we're cutting's local transform
+                Vector3 transformedStartingPoint =
+                    target.transform.InverseTransformPoint(_topRight.transform.position);
+
+                Plane plane = new Plane();
+
+                plane.SetNormalAndPosition(
+                    transformedNormal,
+                    transformedStartingPoint);
+
+                var mesh = leftMeshFilter.sharedMesh;
+                //var mesh = leftMeshFilter.mesh;
+
+                // Cut
+                var pieces = mesh.Cut(plane, capSubmeshIndex);
+
+                leftSide.name = "LeftSide";
+                leftMeshFilter.mesh = pieces.Item1;
+                leftMeshRenderer.sharedMaterials = materials.ToArray();
+                //leftMeshRenderer.materials = materials.ToArray();
+
+                var rightSide = new GameObject("RightSide");
+                var rightMeshFilter = rightSide.AddComponent<MeshFilter>();
+                var rightMeshRenderer = rightSide.AddComponent<MeshRenderer>();
+
+                rightSide.transform.SetPositionAndRotation(leftSide.transform.position, leftSide.transform.rotation);
+                rightSide.transform.localScale = leftSide.transform.localScale;
+
+                rightMeshFilter.mesh = pieces.Item2;
+                rightMeshRenderer.sharedMaterials = materials.ToArray();
+                //rightMeshRenderer.materials = materials.ToArray();
+
+                // Physics 
+                Destroy(leftSide.GetComponent<Collider>());
+
+                // Replace
+                var leftCollider = leftSide.AddComponent<MeshCollider>();
+                leftCollider.convex = true;
+                leftCollider.sharedMesh = pieces.Item1;
+
+                var rightCollider = rightSide.AddComponent<MeshCollider>();
+                rightCollider.convex = true;
+                rightCollider.sharedMesh = pieces.Item2;
+
+                // rigidbody
+                if (!leftSide.GetComponent<Rigidbody>())
+                    leftSide.AddComponent<Rigidbody>();
+
+                if (!rightSide.GetComponent<Rigidbody>())
+                    rightSide.AddComponent<Rigidbody>();
+
+                Vector3 newNormal = Vector3.right * new Random().Next(5, 12);
+
+                leftSide.GetComponent<Rigidbody>()
+                    .AddForce(-newNormal, ForceMode.Impulse);
+                rightSide.GetComponent<Rigidbody>()
+                    .AddForce(newNormal, ForceMode.Impulse);
+                rightSide.tag = "Sliceable";
+                rightSide.AddComponent<Sliceable>().MaterialToSet = sliceableIsSolid;
+                _cutParticleSystem.Play();
             }
-
-
-            //Create a triangle between the tip and base so that we can get the normal
-            Vector3 side1 = _topLeft.transform.position - _topRight.transform.position;
-            Vector3 side2 = _topLeft.transform.position - _bottom.transform.position;
-
-            //Get the point perpendicular to the triangle above which is the normal
-            //https://docs.unity3d.com/Manual/ComputingNormalPerpendicularVector.html
-            Vector3 normal = Vector3.Cross(side1, side2).normalized;
-
-            //Transform the normal so that it is aligned with the object we are slicing's transform.
-            Vector3 transformedNormal =
-                ((Vector3)(_objectToCut.transform.localToWorldMatrix.transpose * normal)).normalized;
-
-            //Get the enter position relative to the object we're cutting's local transform
-            Vector3 transformedStartingPoint =
-                _objectToCut.transform.InverseTransformPoint(_topRight.transform.position);
-
-            Plane plane = new Plane();
-
-            plane.SetNormalAndPosition(
-                transformedNormal,
-                transformedStartingPoint);
-
-            var mesh = leftMeshFilter.sharedMesh;
-            //var mesh = leftMeshFilter.mesh;
-
-            // Cut
-            var pieces = mesh.Cut(plane, capSubmeshIndex);
-
-            leftSide.name = "LeftSide";
-            leftMeshFilter.mesh = pieces.Item1;
-            leftMeshRenderer.sharedMaterials = materials.ToArray();
-            //leftMeshRenderer.materials = materials.ToArray();
-
-            var rightSide = new GameObject("RightSide");
-            var rightMeshFilter = rightSide.AddComponent<MeshFilter>();
-            var rightMeshRenderer = rightSide.AddComponent<MeshRenderer>();
-
-            rightSide.transform.SetPositionAndRotation(leftSide.transform.position, leftSide.transform.rotation);
-            rightSide.transform.localScale = leftSide.transform.localScale;
-
-            rightMeshFilter.mesh = pieces.Item2;
-            rightMeshRenderer.sharedMaterials = materials.ToArray();
-            //rightMeshRenderer.materials = materials.ToArray();
-
-            // Physics 
-            Destroy(leftSide.GetComponent<Collider>());
-
-            // Replace
-            var leftCollider = leftSide.AddComponent<MeshCollider>();
-            leftCollider.convex = true;
-            leftCollider.sharedMesh = pieces.Item1;
-
-            var rightCollider = rightSide.AddComponent<MeshCollider>();
-            rightCollider.convex = true;
-            rightCollider.sharedMesh = pieces.Item2;
-
-            // rigidbody
-            if (!leftSide.GetComponent<Rigidbody>())
-                leftSide.AddComponent<Rigidbody>();
-
-            if (!rightSide.GetComponent<Rigidbody>())
-                rightSide.AddComponent<Rigidbody>();
-
-            Vector3 newNormal = Vector3.right * new Random().Next(5, 12);
-            
-            leftSide.GetComponent<Rigidbody>()
-                .AddForce(-newNormal, ForceMode.Impulse);
-            rightSide.GetComponent<Rigidbody>()
-                .AddForce(newNormal, ForceMode.Impulse);
-            rightSide.tag = "Slicable";
-            _cutParticleSystem.Play();
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError(ex);
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+            }
         }
     }
 
