@@ -34,7 +34,6 @@ public class SliceWorker : MonoBehaviour
             bool isTableFinded = false;
             Vector3 clickPosition;
             Ray rayToMouse = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
 
             foreach (var item in Physics.RaycastAll(rayToMouse, 50))
             {
@@ -54,7 +53,6 @@ public class SliceWorker : MonoBehaviour
             bool isTableFinded = false;
             Vector3 clickPosition;
             Ray rayToMouse = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
             foreach (var item in Physics.RaycastAll(rayToMouse, 50))
             {
                 if (item.transform.gameObject.CompareTag("Table"))

@@ -7,7 +7,6 @@ namespace Databases
     [CreateAssetMenu(fileName = "Products Database", menuName = "ScriptableObjects/ProductsDatabase")]
     public class ProductsDatabase : ScriptableObject
     {
-        public string Name;
         [SerializeField] public List<Product> Products = new List<Product>();
 
         public Product GetProguctByName(string name)
