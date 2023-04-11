@@ -1,23 +1,44 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Assets.Scripts;
 using BLINDED_AM_ME.Extensions;
 using UnityEngine;
 using Random = System.Random;
 
+public enum EGameState
+{
+    Afk,
+    Slice,
+    Throw
+}
+
 public class SliceWorker : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _cutParticleSystem;
+    [SerializeField] private AudioSource _audioThrow;
+    [SerializeField] private AudioSource _audioCut;
     [SerializeField] private GameObject _topLeft;
     [SerializeField] private GameObject _topRight;
     [SerializeField] private GameObject _bottom;
     [SerializeField] private LineRenderer _lineRenderer;
+    [SerializeField] private Transform _targetPoint; 
 
     [SerializeField] private Color originColor;
     [SerializeField] private Color cuttableColor;
     [SerializeField] private Material lineMaterial;
-    private List<GameObject> _objectsToCut = new List<GameObject>();
+    [SerializeField] private float rotationSpeed = 1;
+    [SerializeField] private Vector3 standardHeadLookAt;
+    
+    private List<GameObject> _objects = new List<GameObject>();
+    private Vector3 _lookAtVector = Vector3.zero;
+    public EGameState gameState = EGameState.Throw;
+    public float throwForce = 10f;
+
+
+    private void Start()
+    {
+        _lookAtVector = standardHeadLookAt;
+    }
 
     private void OnDrawGizmos()
     {
@@ -29,102 +50,140 @@ public class SliceWorker : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (_lookAtVector != Vector3.zero)
         {
-            bool isTableFinded = false;
-            Vector3 clickPosition;
-            Ray rayToMouse = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            foreach (var item in Physics.RaycastAll(rayToMouse, 50))
-            {
-                if (item.transform.gameObject.CompareTag("Table"))
-                {
-                    clickPosition = item.point;
-                    _topLeft.transform.position = clickPosition;
-                    _lineRenderer.SetPosition(1, clickPosition);
-                    isTableFinded = true;
-                }
-            }
-            _lineRenderer.enabled = isTableFinded;
+            var targetRotation = Quaternion.LookRotation(_lookAtVector - _targetPoint.position);
+            _targetPoint.rotation = Quaternion.Slerp(_targetPoint.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
-
-        if (Input.GetMouseButton(0))
+        if (gameState == EGameState.Throw)
         {
-            bool isTableFinded = false;
-            Vector3 clickPosition;
-            Ray rayToMouse = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            foreach (var item in Physics.RaycastAll(rayToMouse, 50))
+            if (Input.GetMouseButtonDown(0))
             {
-                if (item.transform.gameObject.CompareTag("Table"))
+                Ray rayToMouse = Camera.main.ScreenPointToRay(Input.mousePosition);
+                foreach (var item in Physics.RaycastAll(rayToMouse, 50))
                 {
-                    clickPosition = item.point;
-                    _topRight.transform.position = clickPosition;
-                    _lineRenderer.SetPosition(0, clickPosition);
-                    isTableFinded = true;
+                    if (item.transform.gameObject.CompareTag("Sliceable"))
+                    {
+                        var position = item.transform.position;
+                        _lookAtVector = new Vector3(position.x, position.y, position.z);
+                        Throw(item.transform.gameObject);
+                        return;
+                    }
                 }
             }
-
-            if (isTableFinded)
+        }
+        else if (gameState == EGameState.Slice)
+        {
+            if (Input.GetMouseButtonDown(0))
             {
-                _lineRenderer.enabled = true;
-                _topLeft.transform.LookAt(_topRight.transform);
-                var position = _topRight.transform.position;
-                var position1 = _topLeft.transform.position;
+                bool isTableFinded = false;
+                Vector3 clickPosition;
+                Ray rayToMouse = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                Vector3 P = position1 + 0.5f * (position - position1);
-                
-                P.y = 0;
-
-                Vector3 rayPos = position1;
-                rayPos.y = 1.3f;
-                
-                Ray findBread = new Ray(rayPos, _topLeft.transform.forward);
-                
-                RaycastHit[] hits = Physics.RaycastAll(findBread, Vector3.Distance(position, position1));
-
-                _objectsToCut.Clear();
-                if (hits.Length == 0)
+                foreach (var item in Physics.RaycastAll(rayToMouse, 50))
                 {
-                    lineMaterial.color = originColor;
+                    if (item.transform.gameObject.CompareTag("Table"))
+                    {
+                        clickPosition = item.point;
+                        _topLeft.transform.position = clickPosition;
+                        _lineRenderer.SetPosition(1, clickPosition);
+                        isTableFinded = true;
+                    }
                 }
 
-                foreach (var hitBread in hits)
+                _lineRenderer.enabled = isTableFinded;
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                bool isTableFinded = false;
+                Vector3 clickPosition;
+                Ray rayToMouse = Camera.main.ScreenPointToRay(Input.mousePosition);
+                foreach (var item in Physics.RaycastAll(rayToMouse, 50))
                 {
-                    if (hitBread.transform.gameObject.CompareTag("Sliceable"))
+                    if (item.transform.gameObject.CompareTag("Table"))
                     {
-                        lineMaterial.color = cuttableColor;
-                        _objectsToCut.Add(hitBread.transform.gameObject);
+                        clickPosition = item.point;
+                        _topRight.transform.position = clickPosition;
+                        _lineRenderer.SetPosition(0, clickPosition);
+                        isTableFinded = true;
                     }
-                    else
+                }
+
+                if (isTableFinded)
+                {
+                    _lineRenderer.enabled = true;
+                    _topLeft.transform.LookAt(_topRight.transform);
+                    var position = _topRight.transform.position;
+                    var position1 = _topLeft.transform.position;
+
+                    Vector3 secondPosition = position1 + 0.5f * (position - position1);
+
+                    secondPosition.y = 0;
+
+                    Vector3 rayPos = position1;
+                    rayPos.y = 1.3f;
+
+                    Ray findBread = new Ray(rayPos, _topLeft.transform.forward);
+
+                    RaycastHit[] hits = Physics.RaycastAll(findBread, Vector3.Distance(position, position1));
+
+                    _objects.Clear();
+                    if (hits.Length == 0)
                     {
                         lineMaterial.color = originColor;
-                        _objectsToCut.Clear();
                     }
-                }
 
-                _bottom.transform.position = P;
+                    foreach (var hitBread in hits)
+                    {
+                        if (hitBread.transform.gameObject.CompareTag("Sliceable"))
+                        {
+                            lineMaterial.color = cuttableColor;
+                            _objects.Add(hitBread.transform.gameObject);
+                        }
+                        else
+                        {
+                            lineMaterial.color = originColor;
+                            _objects.Clear();
+                        }
+                    }
+
+                    _bottom.transform.position = secondPosition;
+                }
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                _lineRenderer.enabled = false;
+                lineMaterial.color = originColor;
+                if (_objects == null)
+                    return;
+                if (_objects.Count == 0)
+                    return;
+                Cut(_objects);
+                _objects.Clear();
             }
         }
+    }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            _lineRenderer.enabled = false;
-            lineMaterial.color = originColor;
-            if (_objectsToCut == null)
-                return;
-            Cut(_objectsToCut);
-            _objectsToCut.Clear();
-        }
+    private void Throw(GameObject target)
+    {
+        Sliceable sliceable = target.GetComponent<Sliceable>();
+        Vector3 direction = (_targetPoint.position - target.transform.position).normalized;
+        
+        _audioThrow.Play();
+        StopCoroutine(HeadPositionDelay());
+        StartCoroutine(HeadPositionDelay());
+        
+        sliceable.GetComponent<Rigidbody>().AddForce(direction * throwForce, ForceMode.Impulse);
+        sliceable.GetComponent<Rigidbody>().AddTorque(direction * throwForce, ForceMode.Impulse);
     }
 
     private void Cut(List<GameObject> targets)
     {
+        _audioCut.Play();
         foreach (var target in targets)
         {
-
-
             try
             {
                 // get the victims mesh
@@ -236,6 +295,13 @@ public class SliceWorker : MonoBehaviour
                 Debug.LogError(ex);
             }
         }
+    }
+
+    private IEnumerator HeadPositionDelay()
+    {
+        yield return new WaitForSeconds(1);
+        _lookAtVector = standardHeadLookAt;
+
     }
 
     // private void Cut()
