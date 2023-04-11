@@ -51,7 +51,6 @@ namespace KitchenStuff.Impls
             _isAnimationPassed = false;
             StartCoroutine(AnimationGoing());
             _isStoveOpened = !_isStoveOpened;
-            //_stoveAnimator.SetBool("StoveAnimationOpen", _isStoveOpened);
             _cameraAnimator.SetBool("StoveAnimationOpen", _isStoveOpened);
         }
     }

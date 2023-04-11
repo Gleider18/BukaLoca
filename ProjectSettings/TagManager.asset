@@ -7,7 +7,6 @@ TagManager:
   - Table
   - Fridge
   - Sliceable
-  - Slicable
   - Stove
   layers:
   - Default

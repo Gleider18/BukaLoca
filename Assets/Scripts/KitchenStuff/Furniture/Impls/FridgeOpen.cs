@@ -4,7 +4,7 @@ using Databases;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace KitchenStuff.Impls
+namespace KitchenStuff.Furniture.Impls
 {
     public class FridgeOpen : MonoBehaviour, IInteractableStuff
     {
@@ -60,7 +60,6 @@ namespace KitchenStuff.Impls
                 {
                     if (hit.collider != null)
                     {
-                        Debug.Log(hit.collider.gameObject.name);
                         if (hit.collider.gameObject.CompareTag("Fridge"))
                         {
                             ChangeStuffState();

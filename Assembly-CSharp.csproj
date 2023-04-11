@@ -45,15 +45,15 @@
      <Compile Include="Assets\Scripts\Slicer\SliceWorker.cs" />
      <Compile Include="Assets\Scripts\Slicer\MeshMaker.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
-     <Compile Include="Assets\Scripts\KitchenStuff\Impls\FridgeOpen.cs" />
+     <Compile Include="Assets\Scripts\KitchenStuff\Furniture\Impls\FridgeOpen.cs" />
      <Compile Include="Assets\Scripts\Slicer\MeshExtensions.cs" />
      <Compile Include="Assets\Scripts\Slicer\SlicerMetadata.cs" />
-     <Compile Include="Assets\Scripts\Slicer\Sliceable.cs" />
+     <Compile Include="Assets\Scripts\KitchenStuff\Food\Sliceable.cs" />
      <Compile Include="Assets\Scripts\Databases\Product.cs" />
+     <Compile Include="Assets\Scripts\KitchenStuff\Furniture\IInteractableStuff.cs" />
+     <Compile Include="Assets\Scripts\KitchenStuff\Furniture\Impls\StoveOpen.cs" />
      <Compile Include="Assets\Scripts\Slicer\MathExtensions.cs" />
      <Compile Include="Assets\Scripts\Databases\ProductsDatabase.cs" />
-     <Compile Include="Assets\Scripts\KitchenStuff\IInteractableStuff.cs" />
-     <Compile Include="Assets\Scripts\KitchenStuff\Impls\StoveOpen.cs" />
      <Reference Include="UnityEngine">
      <HintPath>G:\Programs\Unity\2021.3.6f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -741,6 +741,9 @@
      <Reference Include="Unity.Services.Core">
      <HintPath>C:\Users\Nikita\RiderProjects\BukaLoca\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Animation.Rigging">
+     <HintPath>C:\Users\Nikita\RiderProjects\BukaLoca\Library\ScriptAssemblies\Unity.Animation.Rigging.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Mathematics">
      <HintPath>C:\Users\Nikita\RiderProjects\BukaLoca\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
      </Reference>
@@ -776,6 +779,9 @@
      </Reference>
      <Reference Include="Unity.2D.Common.Editor">
      <HintPath>C:\Users\Nikita\RiderProjects\BukaLoca\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Animation.Rigging.Editor">
+     <HintPath>C:\Users\Nikita\RiderProjects\BukaLoca\Library\ScriptAssemblies\Unity.Animation.Rigging.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.SpriteShape.Runtime">
      <HintPath>C:\Users\Nikita\RiderProjects\BukaLoca\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
